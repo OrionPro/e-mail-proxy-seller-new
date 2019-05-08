@@ -1,0 +1,50 @@
+/* =============================================================================
+   BUTTONS
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+
+.button {
+	td {
+		text-align: center;
+		line-height: 100%;
+		background-color: $button-default-background-color;
+		padding-top: 15px;
+		padding-right: 35px;
+		padding-bottom: 15px;
+		padding-left: 35px;
+	}
+
+	a {
+		color: $button-default-text-color;
+		text-decoration: none;
+	}
+}
+
+
+
+/* Variations
+   ========================================================================== */
+
+/**
+ * Button that populates full width of its parent.
+ */
+
+.button--full-width {
+	width: 100%;
+
+	td {
+		text-align: center;
+	}
+}
+
+/**
+ * Button with rounded edges.
+ */
+
+.button--rounded {
+	td {
+		border-radius: 50px;
+	}
+}

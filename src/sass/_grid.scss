@@ -1,0 +1,120 @@
+/* =============================================================================
+   GRID
+   ========================================================================== */
+
+/* Main wrapper
+   ========================================================================== */
+
+/**
+ * The `.main-wrapper` object helps reset some email client specific
+ * formatting while setting the canvas for you to work in.
+ */
+
+.main-wrapper {
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+	height: 100% !important;
+	line-height: 100% !important;
+	background: $page-background-color;
+}
+
+/**
+ * Adding spacing around main wrapper (optional).
+ */
+
+.main-wrapper__inner {
+	padding-top: $page-vertical-spacing;
+	padding-bottom: $page-vertical-spacing;
+
+	@media (max-width: $breakpoint-mobile) {
+		padding-top: $page-vertical-spacing-mobile !important;
+		padding-right: $page-horizontal-spacing-mobile;
+		padding-bottom: $page-vertical-spacing-mobile !important;
+		padding-left: $page-horizontal-spacing-mobile;
+	}
+}
+
+
+
+/* Container
+   ========================================================================== */
+
+/**
+ * All emails should have a container element. This gives the email a maximum
+ * width for email clients on larger screens. It also orients the email in the
+ * center.
+ */
+
+.container {
+	width: $grid-container-width;
+	margin: 0 auto 0 auto;
+
+	@media (max-width: $breakpoint-mobile) {
+		width: 100% !important;
+	}
+
+	td {
+		@media (max-width: $breakpoint-mobile) {
+			width: 100% !important;
+			display: block;
+			box-sizing: border-box;
+		}
+	}
+}
+
+
+
+/* Columns
+   ========================================================================== */
+
+/**
+ * Generate classes for columns with gutter.
+ */
+
+@for $i from 1 through $grid-columns {
+	.column-#{$i} {
+		padding-left: $grid-gutter / 2;
+		padding-right: $grid-gutter / 2;
+
+		@media (max-width: $breakpoint-mobile) {
+			padding-left: $grid-gutter !important;
+			padding-right: $grid-gutter !important;
+		}
+	}
+}
+
+/**
+ * Generate classes with width.
+ */
+
+@for $i from 1 through $grid-columns {
+	.column-#{$i} {
+		width: $grid-column-width * $i;
+	}
+}
+
+/**
+ * Generate classes for columns without gutter.
+ */
+
+@for $i from 1 through $grid-columns {
+	.no-gutter .column-#{$i} {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/**
+ * Generate `.is-first` and `.is-last` classes.
+ */
+
+@for $i from 1 through $grid-columns {
+	.column-#{$i}.is-first {
+		padding-left: $grid-gutter;
+	}
+
+	.column-#{$i}.is-last {
+		padding-right: $grid-gutter;
+	}
+}

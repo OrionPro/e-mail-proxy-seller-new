@@ -1,0 +1,42 @@
+/* =============================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+	width: $grid-container-width;
+	height: 350px;
+	background-size: cover;
+	background-position: center;
+	vertical-align: middle;
+
+	@media (max-width: $breakpoint-mobile) {
+		height: auto !important;
+		padding-top: $grid-gutter;
+		padding-right: $grid-gutter;
+		padding-bottom: $grid-gutter;
+		padding-left: $grid-gutter;
+	}
+}
+
+
+
+/* Inner
+   ========================================================================== */
+
+.hero__inner {
+	height: 350px;
+	vertical-align: middle;
+
+	@media (max-width: $breakpoint-mobile) {
+		height: auto !important;
+	}
+
+	> table {
+		width: $grid-container-width - 80px;
+		margin: 0 auto;
+
+		@media (max-width: $breakpoint-mobile) {
+			width: 100% !important;
+		}
+	}
+}

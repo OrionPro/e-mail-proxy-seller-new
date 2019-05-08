@@ -1,0 +1,292 @@
+/* =============================================================================
+   UTILITIES
+   ========================================================================== */
+
+/* Background
+   ========================================================================== */
+
+/**
+ * Utilities for controlling an element's background color.
+ */
+
+@each $color-key, $color-value in $colors {
+	.bg-#{$color-key} {
+		background-color: $color-value !important;
+	}
+}
+
+
+
+/* Display
+   ========================================================================== */
+
+/**
+ * Utilities for controlling the display box type of an element.
+ */
+
+.block {
+	display: block !important;
+}
+
+.table {
+	display: table !important;
+}
+
+.table-row {
+	display: table-row !important;
+}
+
+.table-cell {
+	display: table-cell !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.block\@sm {
+		display: block !important;
+	}
+
+	.table\@sm {
+		display: table !important;
+	}
+
+	.table-row\@sm {
+		display: table-row !important;
+	}
+
+	.table-cell\@sm {
+		display: table-cell !important;
+	}
+
+	.hidden\@sm {
+		display: none !important;
+	}
+}
+
+
+
+/* Typography
+   ========================================================================== */
+
+/**
+ * Utilities for controlling the text color of an element.
+ */
+
+@each $color-key, $color-value in $colors {
+	.text-#{$color-key} {
+		color: $color-value !important;
+	}
+}
+
+/**
+ * Utilities for controlling the font weight of an element.
+ */
+
+.font-normal {
+	font-weight: normal !important;
+}
+
+.font-bold {
+	font-weight: bold !important;
+}
+
+/**
+ * Utilities for controlling the alignment of text.
+ */
+
+.text-left {
+	text-align: left !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.text-left\@sm {
+		text-align: left !important;
+	}
+
+	.text-center\@sm {
+		text-align: center !important;
+	}
+
+	.text-right\@sm {
+		text-align: right !important;
+	}
+}
+
+/**
+ * Utilities for controlling the style of text.
+ */
+
+.italic {
+	font-style: italic !important;
+}
+
+.roman {
+	font-style: normal !important;
+}
+
+.uppercase {
+	text-transform: uppercase !important;
+}
+
+
+
+/* Headings
+   ========================================================================== */
+
+/**
+ * 1. Reset margins.
+ * 2. Base headings typography settings.
+ */
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0 !important; /* 1 */
+}
+
+.h1 {
+	/* 2 */
+	font-size: $font-size-h1 !important;
+	line-height: $line-height-h1 !important;
+}
+
+.h2 {
+	/* 2 */
+	font-size: $font-size-h2 !important;
+	line-height: $line-height-h2 !important;
+}
+
+.h3 {
+	/* 2 */
+	font-size: $font-size-h3 !important;
+	line-height: $line-height-h3 !important;
+}
+
+.h4 {
+	/* 2 */
+	font-size: $font-size-h4 !important;
+	line-height: $line-height-h4 !important;
+}
+
+.h5 {
+	/* 2 */
+	font-size: $font-size-h5 !important;
+	line-height: $line-height-h5 !important;
+}
+
+.h6 {
+	/* 2 */
+	font-size: $font-size-h6 !important;
+	line-height: $line-height-h6 !important;
+}
+
+
+
+/* Spacing
+   ========================================================================== */
+
+/**
+ * Utilities for controlling an element's padding.
+ */
+
+@each $spacer-key, $spacer-value in $spacers {
+	@if $spacer-key != 'auto' {
+		.p-#{$spacer-key} {
+			padding-top: $spacer-value !important;
+			padding-right: $spacer-value !important;
+			padding-bottom: $spacer-value !important;
+			padding-left: $spacer-value !important;
+		}
+	}
+
+	@each $spacing-side-key, $spacing-side-value in $spacing-sides {
+		@if $spacer-key != 'auto' {
+			@if $spacing-side-key == 'horizontal' {
+				.p#{$spacing-side-value}-#{$spacer-key} {
+					padding-right: $spacer-value !important;
+					padding-left: $spacer-value !important;
+				}
+			} @else if $spacing-side-key == 'vertical' {
+				.p#{$spacing-side-value}-#{$spacer-key} {
+					padding-top: $spacer-value !important;
+					padding-bottom: $spacer-value !important;
+				}
+			} @else {
+				.p#{$spacing-side-value}-#{$spacer-key} {
+					padding-#{$spacing-side-key}: $spacer-value !important;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Utilities for controlling an element's margin.
+ */
+
+@each $spacing-side-key, $spacing-side-value in $spacing-sides {
+	@each $spacer-key, $spacer-value in $spacers {
+		@if $spacing-side-key == 'horizontal' {
+			.m#{$spacing-side-value}-#{$spacer-key} {
+				margin-right: $spacer-value !important;
+				margin-left: $spacer-value !important;
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint-mobile) {
+	/**
+	 * Utilities for controlling an element's padding.
+	 */
+
+	@each $spacer-key, $spacer-value in $spacers {
+		@if $spacer-key != 'auto' {
+			.p-#{$spacer-key}\@sm {
+				padding-top: $spacer-value !important;
+				padding-right: $spacer-value !important;
+				padding-bottom: $spacer-value !important;
+				padding-left: $spacer-value !important;
+			}
+		}
+
+		@each $spacing-side-key, $spacing-side-value in $spacing-sides {
+			@if $spacer-key != 'auto' {
+				@if $spacing-side-key == 'horizontal' {
+					.p#{$spacing-side-value}-#{$spacer-key}\@sm {
+						padding-right: $spacer-value !important;
+						padding-left: $spacer-value !important;
+					}
+				} @else {
+					.p#{$spacing-side-value}-#{$spacer-key}\@sm {
+						padding-#{$spacing-side-key}: $spacer-value !important;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Utilities for controlling an element's margin.
+	 */
+
+	@each $spacing-side-key, $spacing-side-value in $spacing-sides {
+		@each $spacer-key, $spacer-value in $spacers {
+			@if $spacing-side-key == 'horizontal' {
+				.m#{$spacing-side-value}-#{$spacer-key}\@sm {
+					margin-right: $spacer-value !important;
+					margin-left: $spacer-value !important;
+				}
+			}
+		}
+	}
+}

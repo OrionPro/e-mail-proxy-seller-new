@@ -1,0 +1,101 @@
+/* =============================================================================
+   RESET
+   ========================================================================== */
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * 1. Remove spacing around Outlook 2007 and 2010 tables.
+ *    More info: http://www.campaignmonitor.com/blog/post/3694/removing-spacing-from-around-tables-in-outlook-2007-and-2010
+ * 2. Outlook 2007 and 2010 padding issue fix. These "newer" versions of Outlook
+ *    add some padding around table cells potentially throwing off your
+ *    perfectly pixeled table. The issue can cause added space and also throw
+ *    off borders completely.
+ *    More info:
+ *    - http://www.ianhoar.com/2008/04/29/outlook-2007-borders-and-1px-padding-on-table-cells
+ *    - http://www.campaignmonitor.com/blog/post/3392/1px-borders-padding-on-table-cells-in-outlook-07
+ * 3. Proper table cell alignment on all email clients.
+ */
+
+table {
+	/* 1 */
+	border-collapse: collapse !important;
+	border-spacing: 0 !important;
+	mso-table-lspace: 0pt !important;
+	mso-table-rspace: 0pt !important;
+
+	td {
+		border-collapse: collapse; /* 2 */
+		text-align: left; /* 3 */
+	}
+}
+
+
+
+/* Images
+   ========================================================================== */
+
+/**
+ * 1. This works to help IE properly resize images (if you are resizing them
+ *    using the width and height attributes).
+ * 2. Removes border when linking images.
+ */
+
+img {
+	vertical-align: top;
+	outline: none;
+	text-decoration: none;
+	-ms-interpolation-mode: bicubic; /* 1 */
+
+	@media (max-width: $breakpoint-mobile) {
+		max-width: 100% !important;
+		height: auto !important;
+	}
+
+	a & {
+		border: none; /* 2 */
+	}
+}
+
+/**
+ * 1. Removing auto-generated blue links on Apple devices.
+ *    More info: http://removebluelinks.com
+ * 2. Force Outlook to provide a "View in browser" menu link.
+ * 3. Yahoo! Mail has a knack for picking keywords in emails and linking them to
+ *    advertising popups (blue, dotted links). This is how we remove them.
+ * 4. Force Hotmail to display emails at full width.
+ * 5. Force Hotmail to display normal line spacing.
+ *    More info: http://www.emailonacid.com/forum/viewthread/43
+ */
+
+a[x-apple-data-detectors] {
+	/* 1 */
+	color: inherit !important;
+	text-decoration: none !important;
+	font-size: inherit !important;
+	font-family: inherit !important;
+	font-weight: inherit !important;
+	line-height: inherit !important;
+}
+
+#outlook a {
+	padding: 0; /* 2 */
+}
+
+.yshortcuts a {
+	border-bottom: none !important; /* 3 */
+}
+
+.ExternalClass {
+	width: 100%; /* 4 */
+
+	&,
+	p,
+	span,
+	font,
+	td,
+	div {
+		line-height: 100%; /* 5 */
+	}
+}

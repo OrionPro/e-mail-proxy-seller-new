@@ -1,0 +1,53 @@
+# ------
+# Common
+# ------
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+
+# -----------------------
+# Local Development Tools
+# -----------------------
+/node_modules
+/npm-debug.log
+
+# ---------------
+# Compiled assets
+# ---------------
+release-assets/
+dist/*
+!dist/inline.css
+!dist/embed.css
+!dist/inline.min.css
+!dist/embed.min.css
+test/**/*.html
+!test/**/*-source.html
+
+# User-specific stuff:
+.idea/workspace.xml
+**/.idea/workspace.xml
+.idea/tasks.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/deployment.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+.idea/
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.iws

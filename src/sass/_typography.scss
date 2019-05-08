@@ -1,0 +1,87 @@
+/* =============================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+/* Headings
+   ========================================================================== */
+
+/**
+ * 1. Reset margins.
+ * 2. Base headings typography settings.
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0; /* 1 */
+}
+
+h1 {
+	/* 2 */
+	font-size: $font-size-h1;
+	line-height: $line-height-h1;
+}
+
+h2 {
+	/* 2 */
+	font-size: $font-size-h2;
+	line-height: $line-height-h2;
+}
+
+h3 {
+	/* 2 */
+	font-size: $font-size-h3;
+	line-height: $line-height-h3;
+}
+
+h4 {
+	/* 2 */
+	font-size: $font-size-h4;
+	line-height: $line-height-h4;
+}
+
+h5 {
+	/* 2 */
+	font-size: $font-size-h5;
+	line-height: $line-height-h5;
+}
+
+h6 {
+	/* 2 */
+	font-size: $font-size-h6;
+	line-height: $line-height-h6;
+}
+
+
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Overriding default link styles to make them prettier.
+ */
+
+a {
+	color: $link-color;
+	text-decoration: none;
+}
+
+
+
+/* Lists
+   ========================================================================== */
+
+ul, ol {
+	margin: 0;
+}
+
+/**
+ * 1. Adding padding on list wrapper when used for Outlook fix.
+ * 2. Removing padding on lists inside list wrapper when used for Outlook fix.
+ */
+
+.list-reset {
+	padding-left: 25px; /* 1 */
+
+	ul, ol {
+		padding: 0; /* 2 */
+	}
+}

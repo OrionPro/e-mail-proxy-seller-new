@@ -1,0 +1,19 @@
+/* =============================================================================
+   TABLE
+   ========================================================================== */
+
+/**
+ * 1. System fonts stack.
+ * 2. Base typography settings.
+ */
+
+table,
+td {
+	font-family: $font-family-base !important; /* 1 */
+}
+
+td {
+	/* 2 */
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+}

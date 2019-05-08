@@ -1,0 +1,26 @@
+/* =============================================================================
+   PAGE
+   ========================================================================== */
+
+/**
+ * 1. Prevent Webkit and Windows Mobile platforms from changing default font
+ *    sizes, while not breaking desktop design.
+ * 2. Reset margins and paddings.
+ * 3. Default email background color (Optional).
+ * 4. Apply anti-aliasing when fonts are rendered.
+ * 5. System fonts stack.
+ */
+
+html,
+body {
+	width: 100% !important;
+	height: 100% !important;
+	-webkit-text-size-adjust: 100%; /* 1 */
+	-ms-text-size-adjust: 100%; /* 1 */
+	margin: 0 !important; /* 2 */
+	padding: 0 !important; /* 2 */
+	background: $page-background-color !important; /* 3 */
+	-webkit-font-smoothing: antialiased; /* 4 */
+	-moz-osx-font-smoothing: grayscale; /* 4 */
+	font-family: $font-family-base !important; /* 5 */
+}
